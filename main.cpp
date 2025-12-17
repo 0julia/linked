@@ -31,7 +31,7 @@ void print(node* next, node* head){
     cout << "list: ";
   }
   if(next != NULL){
-    cout << next->getValue() << " ";
+    cout << next->getStudent() << " ";
     print(next->getNext(), head);
   }
 }

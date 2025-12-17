@@ -17,7 +17,7 @@ void node::setValue(int newValue){
   value = newValue;
 }
 
-int node::getValue(){
+int node::getStudent(){
   return value;
 }
 

@@ -6,14 +6,15 @@ using namespace std;
 
 class node{
 public:
-  node();//student* smth);
+  node(student*);
   ~node();
-  void setValue(int newvalue);//student* newvalue);
-  int getValue();//student* getValue();
+  void setValue(student* newvalue);
+  student* getStudent();
   void setNext(node* newnext);
-  node* getNext();
+  node* getNext();//get next Node pointer (10 points)
+  
 private:
-  int value;//student* value;
+  student* value;
   node* next;
 };
 #endif
