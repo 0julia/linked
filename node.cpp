@@ -3,7 +3,7 @@
 
 using namespace std;
 
-node::node(){
+node::node(student* value){
   value = 0;
   next = NULL;
 }
@@ -17,7 +17,7 @@ void node::setValue(int newValue){
   value = newValue;
 }
 
-int node::getStudent(){
+student* node::getStudent(){
   return value;
 }
 
