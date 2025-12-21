@@ -4,21 +4,16 @@
 using namespace std;
 
 node::node(student* value){
-  value = 0;
+  m_student=value;
   next = NULL;
 }
 
 node::~node(){
-  delete &value;
   next = NULL;
 }
 
-void node::setValue(int newValue){
-  value = newValue;
-}
-
 student* node::getStudent(){
-  return value;
+  return m_student;
 }
 
 void node::setNext(node* newnext){

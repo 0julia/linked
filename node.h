@@ -4,17 +4,19 @@
 #include <cstring>
 using namespace std;
 
+class student;
+
 class node{
 public:
-  node(student* value);
+  node(student* p_student); //pass in student parameter
   ~node();
   void setValue(student* newvalue);
   student* getStudent();
   void setNext(node* newnext);
-  node* getNext();//get next Node pointer (10 points)
+  node* getNext();//get next Node pointer
   
 private:
-  student* value;
+  student* m_student; //define student member...(holding pointer object)
   node* next;
 };
 #endif

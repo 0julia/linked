@@ -1,17 +1,21 @@
 # include <iostream>
 # include "node.h"
+# include "student.h"
 using namespace std;
 
-void add(int newvalue, node* &head);
-void print(node* next, node* head);
+//void add(int newvalue, node* &head);
+//void print(node* next, node* head);
 
 
 int main(){
+  
   node* head = NULL;
-  add(5, head);
-  print(head, head);
+  student* s = new student();
+  //add(5, head);
+  //print(head, head);
+  delete s;
 }
-
+/*
 void add(int newvalue, node* &head){
   node* current = head;
   if (current == NULL){
@@ -35,3 +39,4 @@ void print(node* next, node* head){
     print(next->getNext(), head);
   }
 }
+*/
