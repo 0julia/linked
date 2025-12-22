@@ -3,40 +3,61 @@
 # include "student.h"
 using namespace std;
 
-//void add(int newvalue, node* &head);
-//void print(node* next, node* head);
+void add(const char newvalue[100], node* &head);
+void print(node* next, node* head);
 
 
 int main(){
-  
   node* head = NULL;
-  student* s = new student();
-  //add(5, head);
-  //print(head, head);
-  delete s;
+
+  //ADD STUDENT THINGS TO NODE
+  add("Student1", head);
+  add("Student2", head);
+  add("Student3", head);
+  add("a_student", head);
+  
+  //PRINT NODE OF STUDENTS
+  print(head, head);
+
+  //delete s and n from add()
+  node* next = head;
+  while (next != NULL) {
+    node* nextNode = next->getNext();
+    delete next->getStudent();
+    delete next;
+    next = nextNode;
+  }
+  head = NULL;  // list is now empty
+  return 0;
 }
-/*
-void add(int newvalue, node* &head){
-  node* current = head;
-  if (current == NULL){
-    head = new node();
-    head->setValue(newvalue);
-  }else{
-    while (current->getNext() != NULL){
-      current = current->getNext();
+
+void add(const char newvalue[100], node* &head){
+  node* next = head;
+  if (next == NULL){//if empty list
+    student* s = new student();
+    s->name(newvalue);
+    node* n = new node(s);
+    head = n;
+  } else{ //if theres stuff in the list
+    while (next->getNext() != NULL){
+      next = next->getNext();
     }
-    current->setNext(new node());
-    current->getNext()->setValue(newvalue);
+    
+    student* s = new student();
+    s->name(newvalue);
+    node* n = new node(s);
+    next->setNext(n);
   }
 }
+
+
 
 void print(node* next, node* head){
   if(next == head){
     cout << "list: ";
   }
   if(next != NULL){
-    cout << next->getStudent() << " ";
+    cout << next->getStudent()->name() << " ";
     print(next->getNext(), head);
   }
 }
-*/
