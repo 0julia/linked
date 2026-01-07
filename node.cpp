@@ -12,7 +12,8 @@ node::node(student* value){
 //deletes class
 node::~node(){
   next = NULL;
-  m_student=NULL;
+  delete m_student;
+  m_student = NULL;
 }
 
 //gives you student
